@@ -30,11 +30,36 @@ void Persona :: mostrarDatos(){
     cout<<" years. "<<endl;
 }
 
+//Clase derivada docente 
+
+class Docente : public Persona{
+    private:
+        int sueldo;
+        string especialidad;
+    piblic:
+    //las 3 primeras variables osn derivadas de la clase Persona
+        Docente(string,string,int, int,string);
+        void mostrarDocente();   
+};
+
+Docente:: Docente(string n,string d,int e,int s,string es): Persona(n,d,e){
+    sueldo=s;
+    especialidad=es;
+}
+void Docente:: mostrarDocente(){
+    mostrarDatos();
+    cout<<" es un docente con un sueldo de S/"<<sueldo;
+    cout<<"y tiene una especialidad: "<<especialidad<<endl;
+}
+
 int main(){
     //Objeto p de la clase Persona , pero en este caso es el constructor por eso los 3 parametros
-    Persona p("Hola", "4995",25);
+    Persona p("Carla lopez", "49999005",25);
     //Llamada a la funcion mostrarDatos pero para el objeto p-
-    p.mostrarDatos();//+
-    cout << endl;//+
+    p.mostrarDatos();
+    cout << endl;
+
+    Docente d("Maria Igleasias","10203040",54,1000, "Consejeria");
+    d.mostrarDocente();cout<<endl;
     return 0;
 }
