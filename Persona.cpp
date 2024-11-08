@@ -36,13 +36,13 @@ class Docente : public Persona{
     private:
         int sueldo;
         string especialidad;
-    piblic:
+    public:
     //las 3 primeras variables osn derivadas de la clase Persona
         Docente(string,string,int, int,string);
         void mostrarDocente();   
 };
 
-Docente:: Docente(string n,string d,int e,int s,string es): Persona(n,d,e){
+Docente :: Docente(string n,string d,int e,int s,string es): Persona(n,d,e){
     sueldo=s;
     especialidad=es;
 }
